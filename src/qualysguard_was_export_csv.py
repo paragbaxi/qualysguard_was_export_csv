@@ -260,7 +260,7 @@ for qid in root.GLOSSARY.QID_LIST.QID:
     qids[qid.QID.text] = {'severity': qid.SEVERITY.text, 'cwe': qid.CWE.text, 'title': qid.TITLE.text}
 # Parse XML for vulns.
 with open(c_args.output_filename, 'wb') as csvfile:
-    print('Writing CSV to %s...' % c_args.output_filename)
+    print('Writing CSV to %s filename...' % c_args.output_filename)
     csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
     for webapp in root.RESULTS.WEB_APPLICATION:
         try:
