@@ -261,7 +261,7 @@ for qid in root.GLOSSARY.QID_LIST.QID:
 # Parse XML for vulns.
 with open(c_args.output_filename, 'wb') as csvfile:
     print('Writing CSV to %s filename...' % c_args.output_filename)
-    csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+    csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL, quotechar='"')
     for webapp in root.RESULTS.WEB_APPLICATION:
         try:
             for vuln in webapp.VULNERABILITY_LIST.VULNERABILITY:
