@@ -6,7 +6,7 @@ Generate CSV from webapps that were recently scanned by QualysGuard WAS.
 Description
 ===========
 
-Script is intended to run via cron job to pip out CSV file that is being watched by Archer.
+Script is intended to run via cron job to pip out CSV file that is being watched by a GRC tool.
 
 The CSV contains the data points in the following order:
 
