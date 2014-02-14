@@ -26,7 +26,7 @@ Usage
                             qualysguard_was.csv)
       -r RESUME, --resume RESUME
                             Search scans ahead RESUME days from last previous
-                            successfully imported date. (Default = 1)
+                            successfully imported date.
       -t TAG, --tag TAG     Scope import to webapps with TAG tag. Overrides
                             OVERRIDE_ALL_APPS.
       -v, --verbose         Outputs additional information to log.
