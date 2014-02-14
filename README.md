@@ -12,6 +12,10 @@ The CSV contains the data points in the following order:
 
     webapp name, vuln ID, vuln QID, severity, cwe, vuln_title, vuln STATUS, vuln URL, vuln FIRST_TIME_DETECTED, vuln LAST_TIME_DETECTED, vuln IGNORED
 
+CSV format:
+ * Quoted with double-quotes (") characters against all fields.
+ * Comma (,) delimiter
+ * Unicode characters stripped out, and converted if possible ('ā' becomes 'a').
 
 Usage
 =====
