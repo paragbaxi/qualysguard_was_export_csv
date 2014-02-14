@@ -273,5 +273,5 @@ with open(c_args.output_filename, 'wb') as csvfile:
             # No vulns in this webapp.
             logging.debug('No vulns in %s.' % webapp.NAME.text)
             pass
-with open('data.txt') as f:
-    f.write(datetime.time.strftime("%Y-%m-%d"))
+with open('data.txt', 'w') as f:
+    print(datetime.time.strftime('%Y-%m-%d'), file=f)
