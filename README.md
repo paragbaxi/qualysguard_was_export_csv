@@ -3,6 +3,16 @@ qualysguard_was_export_csv
 
 Generate CSV from webapps that were recently scanned by QualysGuard WAS.
 
+Description
+===========
+
+Script is intended to run via cron job to pip out CSV file that is being watched by Archer.
+
+The CSV contains the data points in the following order:
+
+    webapp name, vuln ID, vuln QID, severity, cwe, vuln_title, vuln STATUS, vuln URL, vuln FIRST_TIME_DETECTED, vuln LAST_TIME_DETECTED, vuln IGNORED
+
+
 Usage
 =====
 
