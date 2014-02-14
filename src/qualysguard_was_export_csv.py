@@ -112,7 +112,7 @@ parser.add_argument('-o', '--output_filename',
                     help='Filename of outputted CSV. (Default = qualysguard_was.csv)')
 parser.add_argument('-r', '--resume',
                     default=1,
-                    help='Search scans ahead RESUME days from last previous successfully imported date. (Default = 1)')
+                    help='Search scans ahead RESUME days from last previous successfully imported date.')
 parser.add_argument('-t', '--tag',
                     default=1,
                     help='Scope import to webapps with TAG tag. Overrides OVERRIDE_ALL_APPS.')
@@ -265,7 +265,7 @@ with open(c_args.output_filename, 'wb') as csvfile:
     for webapp in root.RESULTS.WEB_APPLICATION:
         try:
             for vuln in webapp.VULNERABILITY_LIST.VULNERABILITY:
-                csv_writer.writerow([vuln.ID.text, vuln.QID.text, qids[vuln.QID.text]['severity'],
+                csv_writer.writerow([webapp.NAME.text, vuln.ID.text, vuln.QID.text, qids[vuln.QID.text]['severity'],
                                     qids[vuln.QID.text]['cwe'], qids[vuln.QID.text]['title'], vuln.STATUS.text,
                                     vuln.URL.text, vuln.FIRST_TIME_DETECTED.text, vuln.LAST_TIME_DETECTED.text,
                                     vuln.IGNORED.text])
@@ -273,3 +273,5 @@ with open(c_args.output_filename, 'wb') as csvfile:
             # No vulns in this webapp.
             logging.debug('No vulns in %s.' % webapp.NAME.text)
             pass
+with open('data.txt') as f:
+    f.write(datetime.time.strftime("%Y-%m-%d"))
